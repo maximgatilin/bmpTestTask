@@ -9,7 +9,7 @@ class AddForm extends Component {
         <div className='form-group'>
           <label htmlFor='name' className='col-sm-2 control-label'>Название</label>
           <div className='col-sm-4'>
-            <Field name='name' component='input' type='text' className='form-control'/>
+            <Field name='name' component='input' type='text' className='form-control' required/>
           </div>
         </div>
         <div className='form-group'>
