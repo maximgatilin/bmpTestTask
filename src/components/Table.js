@@ -3,7 +3,6 @@ import React from 'react';
 export default function Table(props) {
   return (
     <table className="table">
-      <caption>Экспонаты</caption>
       <thead>
         <tr>
           <th>Название</th>
