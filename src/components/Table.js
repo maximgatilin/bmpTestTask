@@ -1,5 +1,5 @@
 import React from 'react';
-import {Pagination} from 'react-bootstrap';
+import Pagination from './../components/Pagination';
 
 export default function Table(props) {
   const perPage = 5;
@@ -35,8 +35,8 @@ export default function Table(props) {
         }
         </tbody>
       </table>
-      <Pagination className="users-pagination pull-left" bsSize="medium" maxButtons={10} first last next prev
-                  boundaryLinks items={pages} activePage={currentPage} onSelect={props.changePage}/>
+      <Pagination className="pull-left" maxButtons={10} first last next prev
+                         items={pages} activePage={currentPage} onSelect={props.changePage}/>
     </div>
 
   );
