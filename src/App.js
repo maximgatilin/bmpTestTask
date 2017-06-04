@@ -5,7 +5,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <MainContainer />
+        {this.props.children}
       </div>
     );
   }
