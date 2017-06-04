@@ -2,7 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PaginationItem from './PaginationItem';
 
-// todo show arrows only as needed
+const propTypes = {
+  items: PropTypes.number.isRequired,
+  onSelect: PropTypes.func.isRequired,
+  activePage: PropTypes.number.isRequired,
+  className: PropTypes.string,
+  first: PropTypes.bool,
+  last: PropTypes.bool,
+  next: PropTypes.bool,
+  prev: PropTypes.bool
+};
+
 export default function Pagination(props) {
   const elements = [];
   const { first, last, next, prev, activePage:active } = props;
@@ -59,13 +69,4 @@ export default function Pagination(props) {
   )
 }
 
-Pagination.propTypes = {
-  items: PropTypes.number.isRequired,
-  onSelect: PropTypes.func.isRequired,
-  activePage: PropTypes.number.isRequired,
-  className: PropTypes.string,
-  first: PropTypes.bool,
-  last: PropTypes.bool,
-  next: PropTypes.bool,
-  prev: PropTypes.bool
-};
+Pagination.propTypes = propTypes;

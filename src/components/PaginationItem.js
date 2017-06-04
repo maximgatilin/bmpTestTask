@@ -1,6 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const propTypes = {
+  onSelect: PropTypes.func.isRequired,
+  active: PropTypes.bool
+};
+
 export default function PaginationItem(props) {
   function select(event) {
     event.preventDefault();
@@ -20,8 +25,5 @@ export default function PaginationItem(props) {
   );
 }
 
-PaginationItem.propTypes = {
-  onSelect: PropTypes.func.isRequired,
-  active: PropTypes.bool
-};
+PaginationItem.propTypes = propTypes;
 

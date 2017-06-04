@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { Field } from 'redux-form';
 import PropTypes from 'prop-types';
+
+const propTypes = {
+  handleSubmit: PropTypes.func.isRequired
+};
 
 class AddForm extends Component {
   render() {
@@ -43,12 +47,6 @@ class AddForm extends Component {
   }
 }
 
-AddForm.propTypes = {
-  handleSubmit: PropTypes.func.isRequired
-};
-
-AddForm = reduxForm({
-  form: 'add'
-})(AddForm);
+AddForm.propTypes = propTypes;
 
 export default AddForm;
