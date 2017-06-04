@@ -1,5 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Pagination from './../components/Pagination';
+
+const propTypes = {
+  items: PropTypes.array.isRequired,
+  page: PropTypes.number,
+  changePage: PropTypes.func
+};
 
 export default function Table(props) {
   const perPage = 5;
@@ -29,6 +36,8 @@ export default function Table(props) {
                 <td>{exhibit.organization}</td>
                 <td>{exhibit.description || "Описание отсутствует"}</td>
               </tr>
+            } else {
+              return null;
             }
           }
         )
@@ -41,4 +50,6 @@ export default function Table(props) {
 
   );
 }
+
+Table.propTypes = propTypes;
 

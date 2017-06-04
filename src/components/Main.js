@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import ExhibitsTable from './../containers/ExhibitsTable';
 import AddForm from './AddForm';
 
@@ -15,5 +16,9 @@ class Main extends Component {
     )
   }
 }
+
+Main.propTypes = {
+  addExhibit: PropTypes.func.isRequired
+};
 
 export default Main;
