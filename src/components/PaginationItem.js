@@ -13,7 +13,7 @@ export default function PaginationItem(props) {
       `${props.active ? 'active' : ''}
        ${props.disabled ? 'disabled' : ''}`
     }>
-      <a href="#" onClick={select}>
+      <a href="/" onClick={select}>
         {props.children}
       </a>
     </li>

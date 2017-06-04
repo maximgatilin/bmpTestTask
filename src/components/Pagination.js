@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PaginationItem from './PaginationItem';
 
+// todo show arrows only as needed
 export default function Pagination(props) {
   const elements = [];
-  const active = props.activePage;
+  const { first, last, next, prev, activePage:active } = props;
 
   for (let i = 1; i < props.items + 1; i++) {
     let item = <PaginationItem key={i}
@@ -22,37 +23,37 @@ export default function Pagination(props) {
   return (
     <div className={props.className}>
       <ul className="pagination">
-        <PaginationItem
+        {first && <PaginationItem
           disabled={active === 1}
           onSelect={props.onSelect}
           value={firstIndex}
           key="First">
           <span>&laquo;</span>
-        </PaginationItem>
-        <PaginationItem
+        </PaginationItem>}
+        {prev && <PaginationItem
           onSelect={props.onSelect}
           value={active - 1}
           disabled={active === 1}
           key="Previous">
           <span>&lsaquo;</span>
-        </PaginationItem>
+        </PaginationItem>}
 
         {elements}
 
-        <PaginationItem
+        {next && <PaginationItem
           onSelect={props.onSelect}
           value={active + 1}
           disabled={active === lastIndex}
           key="Next">
           <span>&rsaquo;</span>
-        </PaginationItem>
-        <PaginationItem
+        </PaginationItem>}
+        {last && <PaginationItem
           onSelect={props.onSelect}
           value={lastIndex}
           disabled={active === lastIndex}
           key="Last">
           <span>&raquo;</span>
-        </PaginationItem>
+        </PaginationItem>}
       </ul>
     </div>
   )
