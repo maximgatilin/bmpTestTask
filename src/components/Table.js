@@ -5,7 +5,8 @@ import Pagination from './../components/Pagination';
 const propTypes = {
   items: PropTypes.array.isRequired,
   page: PropTypes.number,
-  changePage: PropTypes.func
+  changePage: PropTypes.func,
+  isFiltered: PropTypes.bool.isRequired
 };
 
 export default function Table(props) {
@@ -13,6 +14,7 @@ export default function Table(props) {
   const pages = Math.ceil(props.items.length / perPage);
   const currentPage = props.page;
   const startOffset = ( currentPage - 1) * perPage;
+  const emptyText = props.isFiltered ? 'По выбранным фильтрам ничего не найдено' : 'Данные отсутствуют';
   let startCount = 0;
 
   return (
@@ -27,6 +29,7 @@ export default function Table(props) {
         </tr>
         </thead>
         <tbody>
+        { props.items.length === 0 && <tr>{emptyText}</tr> }
         { props.items.map((exhibit, index) => {
             if (index >= startOffset && startCount < perPage) {
               let locationSeparator = exhibit.city && exhibit.country ? ',' : '';

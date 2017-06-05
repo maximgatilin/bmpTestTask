@@ -15,19 +15,21 @@ class ExhibitsTable extends Component {
   }
 
   render() {
-    return <Table items={this.props.items} changePage={this.changePage} page={this.props.page}/>
+    return <Table items={this.props.items} changePage={this.changePage} page={this.props.page} isFiltered={this.props.isFiltered}/>
   }
 }
+
 function mapStateToProps(state) {
   const { items, searchName, filters } = state.exhibits;
   let filteredItems = items;
-  let page = Number(state.routing.locationBeforeTransitions.query.page) || 1;
+  const searchApplied = searchName !== '';
+  const filtersApplied = Object.keys(filters).length !== 0;
 
-  if (searchName !== '') {
+  if (searchApplied) {
     filteredItems = filteredItems.filter(item => item.name.toLowerCase().includes(searchName.toLowerCase()));
   }
 
-  if (Object.keys(filters).length !== 0) {
+  if (filtersApplied) {
     // loop over all filters and apply it
     for (const key of Object.keys(filters)) {
       filteredItems = filteredItems.filter(item => item[key].includes(filters[key]));
@@ -36,7 +38,8 @@ function mapStateToProps(state) {
 
   return ({
     items: filteredItems,
-    page: page
+    page: Number(state.routing.locationBeforeTransitions.query.page) || 1,
+    isFiltered: searchApplied || filtersApplied
   });
 }
 
