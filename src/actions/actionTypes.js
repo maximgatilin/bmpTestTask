@@ -1,1 +1,2 @@
 export const ADD_EXHIBIT = 'ADD_EXHIBIT';
+export const SEARCH_EXHIBIT = 'SEARCH_EXHIBIT';

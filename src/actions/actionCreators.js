@@ -6,3 +6,10 @@ export function addExhibit(exhibit) {
     payload: exhibit
   }
 }
+
+export function searchExhibit(request) {
+  return {
+    type: types.SEARCH_EXHIBIT,
+    payload: request
+  }
+}

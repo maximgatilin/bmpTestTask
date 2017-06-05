@@ -19,9 +19,17 @@ class ExhibitsTable extends Component {
   }
 }
 function mapStateToProps(state) {
+  const { items, searchName } = state.exhibits;
+  let filteredItems = items;
+  let page = Number(state.routing.locationBeforeTransitions.query.page) || 1;
+
+  if (searchName !== '') {
+    filteredItems = filteredItems.filter(item => item.name.includes(searchName));
+  }
+
   return ({
-    items: state.exhibits,
-    page: Number(state.routing.locationBeforeTransitions.query.page) || 1
+    items: filteredItems,
+    page: page
   });
 }
 
