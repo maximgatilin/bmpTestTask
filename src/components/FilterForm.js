@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 
 const propTypes = {
   handleSubmit: PropTypes.func.isRequired,
-  options: PropTypes.array
+  options: PropTypes.array.isRequired,
+  reset: PropTypes.func.isRequired
 };
 
 const onChangeSubmit = (onChange, handleSubmit) => {

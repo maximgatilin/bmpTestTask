@@ -7,7 +7,7 @@ const propTypes = {
 };
 
 function Modal(props) {
-  const { title, handleClose } = props;
+  const { title, handleClose, children } = props;
   return (
     <div id="myModal" className="modal show" role="dialog">
       <div className="modal-dialog">
@@ -17,7 +17,7 @@ function Modal(props) {
             <h4 className="modal-title">{title}</h4>
           </div>
           <div className="modal-body">
-            {props.children}
+            {children}
           </div>
         </div>
       </div>
