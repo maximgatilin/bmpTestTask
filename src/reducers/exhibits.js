@@ -25,6 +25,11 @@ export default function exhibits(state = initialState, action) {
         ...state,
         filters: action.payload
       };
+    case types.RESET_FILTER_EXHIBIT:
+      return {
+        ...state,
+        filters: {}
+      };
     default:
       return state;
   }

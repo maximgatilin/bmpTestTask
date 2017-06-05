@@ -20,3 +20,9 @@ export function filterExhibit(filter) {
     payload: filter
   }
 }
+
+export function resetFilterExhibit() {
+  return {
+    type: types.RESET_FILTER_EXHIBIT
+  }
+}

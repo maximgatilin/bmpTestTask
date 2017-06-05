@@ -15,7 +15,8 @@ const mapStateToProps = (state) => {
   organizations = organizations.filter((item, index) => organizations.indexOf(item) === index);
 
   return {
-    options: organizations
+    options: organizations,
+    filters: state.exhibits.filters
   }
 };
 
@@ -26,6 +27,9 @@ const mapDispatchToProps = (dispatch) => {
       bindActionCreators(actionCreators, dispatch).filterExhibit(...args);
       // redirect user to first page
       dispatch(push(`/?page=1`));
+    },
+    handleResetClick: function(...args) {
+      bindActionCreators(actionCreators, dispatch).resetFilterExhibit(...args);
     }
   }
 };
