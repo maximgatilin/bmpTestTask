@@ -1,10 +1,10 @@
 import data from './../data/exhibits.json';
 import * as types from './../actions/actionTypes';
+import { generateLocation } from './../utils/utils';
 
 // add location field to each item
 const items = data.map(item => {
-  const locationSeparator = item.city && item.country ? ',' : '';
-  const location = item.city || item.country ? `${item.city}${locationSeparator} ${item.country}` : '';
+  let location = generateLocation(item);
   return {
     ...item,
     location
@@ -23,7 +23,7 @@ export default function exhibits(state = initialState, action) {
     case types.ADD_EXHIBIT:
       return {
         ...state,
-        items: [...state.items, action.payload]
+        items: [...state.items, {...action.payload, location: generateLocation(action.payload)}]
       };
     case types.SEARCH_EXHIBIT:
       return {
