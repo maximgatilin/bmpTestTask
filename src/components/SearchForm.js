@@ -12,7 +12,10 @@ function SearchForm(props) {
       <h3>Поиск по названию</h3>
       <div className='form-group'>
         <Field name='request' component='input' type='text' className='form-control'/>
-        <button style={{marginLeft: '15px'}} type='submit' className='btn btn-primary'>Найти</button>
+        <button style={{marginLeft: '15px'}} type='submit' className='btn btn-primary'>
+          <span className="glyphicon glyphicon-search" style={{marginRight: '5px'}}></span>
+          Найти
+        </button>
       </div>
     </form>
   );

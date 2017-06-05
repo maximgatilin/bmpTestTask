@@ -10,36 +10,49 @@ export default function AddForm(props) {
   return (
     <form onSubmit={props.handleSubmit} className='form-horizontal'>
       <div className='form-group'>
-        <label htmlFor='name' className='col-sm-2 control-label'>Название</label>
-        <div className='col-sm-4'>
+        <div className='col-sm-offset-1 col-sm-3'>
+          <label htmlFor='name' className='col-sm-2 control-label'>Название</label>
+        </div>
+        <div className='col-sm-6'>
           <Field name='name' component='input' type='text' className='form-control' required/>
         </div>
       </div>
       <div className='form-group'>
-        <label htmlFor='city' className='col-sm-2 control-label'>Город создания</label>
-        <div className='col-sm-4'>
+        <div className='col-sm-offset-1 col-sm-3'>
+          <label htmlFor='city' className='col-sm-2 control-label'>Город создания</label>
+        </div>
+        <div className='col-sm-6'>
           <Field name='city' component='input' type='text' className='form-control'/>
         </div>
       </div>
       <div className='form-group'>
-        <label htmlFor='country' className='col-sm-2 control-label'>Страна создания</label>
-        <div className='col-sm-4'>
+        <div className='col-sm-offset-1 col-sm-3'>
+          <label htmlFor='country' className='col-sm-2 control-label'>Страна создания</label>
+        </div>
+        <div className='col-sm-6'>
           <Field name='country' component='input' type='text' className='form-control'/>
         </div>
       </div>
       <div className='form-group'>
-        <label htmlFor='organization' className='col-sm-2 control-label'>Организация</label>
-        <div className='col-sm-4'>
+        <div className='col-sm-offset-1 col-sm-3'>
+          <label htmlFor='organization' className='col-sm-2 control-label'>Организация</label>
+        </div>
+        <div className='col-sm-6'>
           <Field name='organization' component='input' type='text' className='form-control'/>
         </div>
       </div>
       <div className='form-group'>
-        <label htmlFor='description' className='col-sm-2 control-label'>Описание</label>
-        <div className='col-sm-4'>
+        <div className='col-sm-offset-1 col-sm-3'>
+          <label htmlFor='description' className='col-sm-2 control-label'>Описание</label>
+        </div>
+        <div className='col-sm-6'>
           <Field name='description' component='textarea' className='form-control'/>
         </div>
       </div>
-      <button type='submit' className='btn btn-primary'>Добавить</button>
+      <button type='submit' className='btn btn-primary'>
+        <span className="glyphicon glyphicon-plus-sign" style={{marginRight: '5px'}}></span>
+        Добавить
+      </button>
     </form>
   );
 }

@@ -6,7 +6,10 @@ import AddForm from './../components/AddForm';
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onSubmit: bindActionCreators(actionCreators, dispatch).addExhibit
+    onSubmit: function(...args) {
+      bindActionCreators(actionCreators, dispatch).addExhibit(...args);
+      bindActionCreators(actionCreators, dispatch).hideAddModal(...args);
+    }
   }
 };
 

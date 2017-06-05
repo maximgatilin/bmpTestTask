@@ -26,3 +26,15 @@ export function resetFilterExhibit() {
     type: types.RESET_FILTER_EXHIBIT
   }
 }
+
+export function showAddModal() {
+  return {
+    type: types.SHOW_ADD_MODAL
+  }
+}
+
+export function hideAddModal() {
+  return {
+    type: types.HIDE_ADD_MODAL
+  }
+}
