@@ -32,11 +32,10 @@ export default function Table(props) {
         { props.items.length === 0 && <tr>{emptyText}</tr> }
         { props.items.map((exhibit, index) => {
             if (index >= startOffset && startCount < perPage) {
-              let locationSeparator = exhibit.city && exhibit.country ? ',' : '';
               startCount++;
               return <tr key={index}>
                 <td>{exhibit.name}</td>
-                <td>{exhibit.city}{locationSeparator} {exhibit.country}</td>
+                <td>{exhibit.location}</td>
                 <td>{exhibit.organization}</td>
                 <td>{exhibit.description || "Описание отсутствует"}</td>
               </tr>

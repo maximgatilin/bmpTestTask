@@ -23,11 +23,10 @@ function FilterForm(props) {
   const {handleSubmit, reset, handleResetClick} = props;
   return (
     <form onSubmit={handleSubmit} className='form-inline'>
-      <h3>Фильтр по организации</h3>
+      <h3>Фильтр по месту создания</h3>
       <div className='form-group'>
         <Field
-          name='organization'
-          value={props.filters.organization || ''}
+          name='location'
           component='select'
           className='form-control'
           onChange={onChangeSubmit(() => {}, handleSubmit)}>

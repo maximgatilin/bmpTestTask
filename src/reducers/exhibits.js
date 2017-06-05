@@ -1,8 +1,18 @@
 import data from './../data/exhibits.json';
 import * as types from './../actions/actionTypes';
 
+// add location field to each item
+const items = data.map(item => {
+  const locationSeparator = item.city && item.country ? ',' : '';
+  const location = item.city || item.country ? `${item.city}${locationSeparator} ${item.country}` : '';
+  return {
+    ...item,
+    location
+  };
+});
+
 const initialState = {
-  items: data,
+  items,
   searchName: '',
   filters: {}
 };

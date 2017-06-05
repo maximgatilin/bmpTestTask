@@ -6,16 +6,16 @@ import * as actionCreators from './../actions/actionCreators';
 import FilterForm from './../components/FilterForm';
 
 const mapStateToProps = (state) => {
-  let organizations = state.exhibits.items
+  let locations = state.exhibits.items
     // get organizations
-    .map(item => item.organization)
+    .map(item => item.location)
     // remove empty strings
-    .filter(item => item !== '');
+    .filter(location => location !== '');
     // remove duplicates
-  organizations = organizations.filter((item, index) => organizations.indexOf(item) === index);
+  locations = locations.filter((location, index) => locations.indexOf(location) === index);
 
   return {
-    options: organizations,
+    options: locations,
     filters: state.exhibits.filters
   }
 };
