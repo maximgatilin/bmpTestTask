@@ -24,7 +24,7 @@ function mapStateToProps(state) {
   let page = Number(state.routing.locationBeforeTransitions.query.page) || 1;
 
   if (searchName !== '') {
-    filteredItems = filteredItems.filter(item => item.name.includes(searchName));
+    filteredItems = filteredItems.filter(item => item.name.toLowerCase().includes(searchName.toLowerCase()));
   }
 
   return ({
