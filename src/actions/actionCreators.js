@@ -13,3 +13,10 @@ export function searchExhibit(request) {
     payload: request
   }
 }
+
+export function filterExhibit(filter) {
+  return {
+    type: types.FILTER_EXHIBIT,
+    payload: filter
+  }
+}

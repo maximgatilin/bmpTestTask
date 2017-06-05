@@ -19,12 +19,19 @@ class ExhibitsTable extends Component {
   }
 }
 function mapStateToProps(state) {
-  const { items, searchName } = state.exhibits;
+  const { items, searchName, filters } = state.exhibits;
   let filteredItems = items;
   let page = Number(state.routing.locationBeforeTransitions.query.page) || 1;
 
   if (searchName !== '') {
     filteredItems = filteredItems.filter(item => item.name.toLowerCase().includes(searchName.toLowerCase()));
+  }
+
+  if (Object.keys(filters).length !== 0) {
+    // loop over all filters and apply it
+    for (const key of Object.keys(filters)) {
+      filteredItems = filteredItems.filter(item => item[key].includes(filters[key]));
+    }
   }
 
   return ({

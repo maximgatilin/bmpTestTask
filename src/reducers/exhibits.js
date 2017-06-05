@@ -3,7 +3,8 @@ import * as types from './../actions/actionTypes';
 
 const initialState = {
   items: data,
-  searchName: ''
+  searchName: '',
+  filters: {}
 };
 
 
@@ -18,6 +19,11 @@ export default function exhibits(state = initialState, action) {
       return {
         ...state,
         searchName: (action.payload && action.payload.request) || ''
+      };
+    case types.FILTER_EXHIBIT:
+      return {
+        ...state,
+        filters: action.payload
       };
     default:
       return state;
