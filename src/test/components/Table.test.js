@@ -1,6 +1,5 @@
 import React from 'react';
 import Table from './../../components/Table';
-import Pagination from './../../components/Pagination';
 import { shallow } from 'enzyme';
 
 it('renders without crashing', () => {
@@ -14,6 +13,6 @@ it('renders with pagination', () => {
 
 it('renders without pagination', () => {
   const table = shallow(<Table items={[]}/>);
-  expect(table.find('Pagination').length === 1, true).toEqual(false);
+  expect(table.find('Pagination').length === 0, true).toEqual(true);
 });
 

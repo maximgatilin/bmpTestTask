@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 const propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   options: PropTypes.array.isRequired,
+  filters: PropTypes.object.isRequired,
   reset: PropTypes.func.isRequired
 };
 

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const propTypes = {
-  onSelect: PropTypes.func.isRequired,
+  onSelect: PropTypes.func,
   active: PropTypes.bool
 };
 
