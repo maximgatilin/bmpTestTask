@@ -9,7 +9,7 @@ const propTypes = {
 };
 
 export default function AddModal(props) {
-  const { handleShowBtn, handleClose, show, children } = props;
+  const { handleShowBtn, handleClose, show, children, title } = props;
 
   return (
     <div>
@@ -17,7 +17,7 @@ export default function AddModal(props) {
         <span className="glyphicon glyphicon-plus-sign" style={{marginRight: '5px'}}></span>
         Добавить новый экспонат
       </button>
-      { show && <Modal title={this.props.title} handleClose={handleClose}>{children}</Modal>}
+      { show && <Modal title={title} handleClose={handleClose}>{children}</Modal>}
     </div>
   )
 }
