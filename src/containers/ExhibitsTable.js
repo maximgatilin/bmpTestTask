@@ -15,7 +15,7 @@ class ExhibitsTable extends Component {
   }
 
   render() {
-    return <Table items={this.props.items} changePage={this.changePage} page={this.props.page} isFiltered={this.props.isFiltered}/>
+    return <Table items={this.props.items} changePage={this.changePage} page={this.props.page} isFiltered={this.props.isFiltered} paginated={true}/>
   }
 }
 
